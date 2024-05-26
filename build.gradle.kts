@@ -4,6 +4,8 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.5"
 	jacoco
 	id("org.sonarqube") version "4.4.1.3373"
+	kotlin("jvm") version "1.5.21"
+	kotlin("plugin.spring") version "1.5.21"
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -42,6 +44,9 @@ dependencies {
 	testImplementation("io.github.bonigarcia:webdrivermanager:$webdrivermanagerVersion")
 	testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("com.h2database:h2")
 }
 
 tasks.withType<Test> {
